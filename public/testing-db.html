@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello World!</h1>
+
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+        import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyB2NSWc8_tX8unwsrRlo3jpSYbxsXjlyIY",
+            authDomain: "anwar-ml.firebaseapp.com",
+            databaseURL: "https://anwar-ml-default-rtdb.firebaseio.com",
+            projectId: "anwar-ml",
+            storageBucket: "anwar-ml.appspot.com",
+            messagingSenderId: "599710129151",
+            appId: "1:599710129151:web:efa52e950869f0908a65ca",
+            measurementId: "G-W2G69KT8WW"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase();
+
+        // set(ref(db, 'dashboard/jumlah'), {
+        //     penduduk: 2019225,
+        //     kecamatan: 17,
+        //     kelurahan: 5,
+        //     desa: 292
+        // })
+
+        let dataMahasiswa;
+
+        onValue(ref(db, 'dashboard/jumlah'), (items) => {
+            dataMahasiswa = items.val();
+        });
+
+    </script>
+</body>
+
+</html>

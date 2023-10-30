@@ -1,0 +1,82 @@
+.ff-poppins {
+    font-family: 'Poppins', 'sans-serif';
+}
+
+.bg-blue-light {
+    background-color: #F2F7FF;
+}
+
+.mobile-jumlah {
+  border-left: solid;
+  border-right: solid;
+  border-width: 4px;
+  border-color: #0C356A;
+}
+
+/* @media (min-width: 768px) {
+  .mobile-jumlah {
+    border: none;
+  }
+} */
+
+.custom {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100vh;
+  background-color: #A6F6FF;
+}
+
+.bg-peacock {
+    background-color: #004958;
+}
+
+.bg-daerah {
+  background-color: #F4EEEE;
+}
+
+.bg-orange {
+  background-color: #E55604;
+}
+
+.bg-turqoise {
+  background-color: #AFEEEE;
+}
+
+/* Gaya untuk slider container */
+.slider-info {
+    position: relative;
+  }
+  
+  /* Gaya untuk slide */
+  .slide-info {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Gaya untuk tombol prev dan next */
+  .prev-button,
+  .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .prev-button {
+    left: 0;
+  }
+  
+  .next-button {
+    right: 0;
+  }
+  
+
+.stats-icon{width:3rem;height:3rem;border-radius:.5rem;background-color:#000;float:right;display:flex;align-items:center;justify-content:center}
+.stats-icon i{color:#fff;font-size:1.7rem}
+.stats-icon.purple{background-color:#9694ff}
+.stats-icon.blue{background-color:#57caeb}
+.stats-icon.red{background-color:#ff7976}
+.stats-icon.green{background-color:#5ddab4}
+@media (max-width:767px)
+{.stats-icon{float:left;margin-bottom:.4rem}}
