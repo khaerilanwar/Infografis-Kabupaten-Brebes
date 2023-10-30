@@ -19,6 +19,8 @@ export function tambahBaris(idTable, data) {
     }
 }
 
+// Fungsi untuk menambah form input
+
 // Fungsi untuk mengubah key JSON ke dalam kata biasa
 export function keyToWord(kata) {
     let result;

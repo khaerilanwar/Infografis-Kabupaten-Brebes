@@ -45,3 +45,52 @@ onValue(ref(db, 'dashboard/jumlah'), (items) => {
         console.log(dataUpdate)
     })
 })
+
+function tambahInput() {
+    // Membuat element div dengan class row
+    var row = document.createElement('div')
+    row.classList.add('row', 'mb-3')
+
+    // Membuat elemen div dengan class col
+    var col1 = document.createElement('div')
+    col1.setAttribute('class', 'col')
+    var col2 = document.createElement('div')
+    col2.setAttribute('class', 'col')
+
+    // Membuat element input
+    // Input tahun
+    var inputYears = document.createElement('input')
+    inputYears.setAttribute('type', 'number')
+    inputYears.setAttribute('class', 'form-control')
+    inputYears.setAttribute('placeholder', 'Tahun')
+    // Input Persentase
+    var inputIPM = document.createElement('input')
+    inputIPM.setAttribute('type', 'text')
+    inputIPM.setAttribute('class', 'form-control')
+    inputIPM.setAttribute('placeholder', 'Persentase IPM')
+
+    // Menggabungkan element
+    col1.appendChild(inputYears)
+    col2.appendChild(inputIPM)
+    row.appendChild(col1)
+    row.appendChild(col2)
+
+    document.getElementById('form-ipm').appendChild(row)
+}
+
+function hapusInput() {
+    const parentForm = document.getElementById('form-ipm')
+    const lastChild = parentForm.lastChild
+
+    if (lastChild) {
+        parentForm.removeChild(lastChild)
+    }
+}
+
+document.getElementById('button-add-input').addEventListener('click', function () {
+    tambahInput()
+})
+
+document.getElementById('button-remove-input').addEventListener('click', function () {
+    hapusInput()
+})

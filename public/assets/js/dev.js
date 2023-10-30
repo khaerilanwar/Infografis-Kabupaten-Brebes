@@ -22,9 +22,10 @@ onValue(ref(db, 'mahasiswa'), (items) => {
     // console.log(data)
     const dataUji = data[0]
     const dataUpdate = {
-        nama: 'Khaeril Anwar Sayang',
+        nama: 'Khaeril Anwar',
         nim: 12210952,
-        alamat: 'Cikarang, Bekasi'
+        alamat: 'Pasarbatang, Brebes',
+        pekerjaan: 'Programmer Profesional'
     }
 
     const updates = {}
