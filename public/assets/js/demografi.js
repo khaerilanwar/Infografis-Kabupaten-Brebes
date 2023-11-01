@@ -41,8 +41,8 @@ function keyToWord(kata) {
 // Luas Daerah
 onValue(ref(db, 'demografi/wilayah'), (items) => {
     document.querySelector('[luas-daerah]').innerHTML = items.val()['luasDaerah'].toLocaleString('id-ID') + ' km²';
-    document.querySelector('[nama-kecamatan-terluas]').innerHTML = items.val()['kecamatanTerluas']['nama'];
-    document.querySelector('[luas-kecamatan-terluas]').innerHTML = items.val()['kecamatanTerluas']['luas'].toLocaleString('id-ID');
+    document.querySelector('[nama-kecamatan-terluas]').innerHTML = items.val()['namaKecamatanTerluas'];
+    document.querySelector('[luas-kecamatan-terluas]').innerHTML = items.val()['luasKecamatanTerluas'].toLocaleString('id-ID');
 })
 
 onValue(ref(db, 'demografi/lahanBukanSawah'), (items) => {

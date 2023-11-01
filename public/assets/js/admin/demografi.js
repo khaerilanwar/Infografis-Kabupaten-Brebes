@@ -95,7 +95,22 @@ onValue(ref(db, keyLahanBukanSawah), items => {
     }
 
     document.querySelector('button[data-button="lahan-bukan-sawah"]').addEventListener('click', function () {
-        console.log('Hello World!')
+        // Mendefinisikan object untuk menyimpan data terbaru
+        const dataUpdates = {}
+        // Mengekstraksi data update
+        const elementInput = document.getElementById('form-bukan-sawah').querySelectorAll('input')
+        for (let ei = 0; ei < elementInput.length; ei++) {
+            dataUpdates[elementInput[ei].getAttribute('id')] = parseFloat(elementInput[ei].value.replace(',', '.'))
+        }
+        // Melakukan update data di database
+        const updatesData = {}
+        updatesData[keyLahanBukanSawah] = data
+        updatesData[keyLahanBukanSawah] = dataUpdates
+        update(ref(db), updatesData)
+            .then(feedbackData('success', 'Berhasil perbarui data'))
+            .catch((error) => {
+                feedbackData('error', error)
+            })
     })
 })
 
@@ -113,6 +128,25 @@ onValue(ref(db, keyLuasKemiringanLahan), items => {
         let placeholderInput = `Masukkan Luas Kemiringan`
         tambahInputLabelLahan(idWrapper, idInput, labelTeks, placeholderInput, data[kl].toLocaleString('id-ID'))
     }
+
+    document.querySelector('button[data-button="luas-kemiringan-lahan"]').addEventListener('click', function () {
+        // Mendefinisikan object untuk menyimpan data terbaru
+        const dataUpdates = {}
+        // Mengekstraksi data update
+        const elementInput = document.getElementById('form-kemiringan').querySelectorAll('input')
+        for (let ei = 0; ei < elementInput.length; ei++) {
+            dataUpdates[elementInput[ei].getAttribute('id')] = parseFloat(elementInput[ei].value.replace(',', '.'))
+        }
+        // Melakukan update data di database
+        const updatesData = {}
+        updatesData[keyLuasKemiringanLahan] = data
+        updatesData[keyLuasKemiringanLahan] = dataUpdates
+        update(ref(db), updatesData)
+            .then(feedbackData('success', 'Berhasil perbarui data'))
+            .catch((error) => {
+                feedbackData('error', error)
+            })
+    })
 })
 
 const keyWilayah = 'demografi/wilayah'
@@ -120,12 +154,6 @@ onValue(ref(db, keyWilayah), items => {
     let data = items.val()
     const idWrapper = 'form-wilayah'
     deleteElement(idWrapper)
-    // Mendefinisikan data wilayah Brebes karena struktur object tidak konsisten
-    data = {
-        namaKecamatanTerluas: data['kecamatanTerluas']['nama'],
-        luasKecamatanTerluas: data['kecamatanTerluas']['luas'],
-        luasDaerahBrebes: data['luasDaerah']
-    }
     // Menambahkan element input ke dalam HTML
     for (let w in data) {
         let idInput = keyToWord(w).toLowerCase().trim().replace(/ /g, '-')
@@ -133,6 +161,29 @@ onValue(ref(db, keyWilayah), items => {
         let placeholderInput = `Masukkan ${keyToWord(w)}`
         tambahInputLabelLahan(idWrapper, idInput, labelTeks, placeholderInput, data[w].toLocaleString('id-ID'))
     }
+
+    document.querySelector('button[data-button="wilayah-brebes"]').addEventListener('click', function () {
+        // Mendefinisikan object untuk menyimpan data terbaru
+        const dataUpdates = {}
+        // Mengekstraksi data update
+        const elementInput = document.getElementById('form-wilayah').querySelectorAll('input')
+        for (let ei = 0; ei < elementInput.length; ei++) {
+            if (elementInput[ei].getAttribute('id') === 'nama-kecamatan-terluas') {
+                dataUpdates[camelCase(elementInput[ei].getAttribute('id'))] = elementInput[ei].value
+            } else {
+                dataUpdates[camelCase(elementInput[ei].getAttribute('id'))] = parseFloat(elementInput[ei].value.replace(',', '.'))
+            }
+        }
+        // Melakukan update data di database
+        const updatesData = {}
+        updatesData[keyWilayah] = data
+        updatesData[keyWilayah] = dataUpdates
+        update(ref(db), updatesData)
+            .then(feedbackData('success', 'Berhasil perbarui data'))
+            .catch((error) => {
+                feedbackData('error', error)
+            })
+    })
 
 })
 
@@ -188,3 +239,4 @@ function tambahInputLabelKuantitas(idInput, labelTeks, placeholderInput, valueIn
     rowInput.appendChild(col)
 }
 
+console.log(window.location.pathname)
