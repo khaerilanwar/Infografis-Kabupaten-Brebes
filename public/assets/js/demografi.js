@@ -335,9 +335,9 @@ onValue(ref(db, 'demografi/dataJumlah'), (items) => {
     document.querySelector('[jumlah-curah-hujan]').innerHTML = data['curahHujan'].toLocaleString('id-ID');
     document.querySelector('[jumlah-hari-hujan]').innerHTML = data['hariHujan'].toLocaleString('id-ID');
 
-    document.querySelector('[jumlah-kk]').innerHTML = data['penduduk']['kk'].toLocaleString('id-ID')+' KK';
-    document.querySelector('[kepadatan-penduduk]').innerHTML = data['penduduk']['kepadatan'].toLocaleString('id-ID')+' jiwa/km²';
-    document.querySelector('[usia-produktif]').innerHTML = data['penduduk']['usiaProduktif'].toLocaleString('id-ID')+'%';
+    document.querySelector('[jumlah-kk]').innerHTML = data['penduduk']['kartuKeluarga'].toLocaleString('id-ID') + ' KK';
+    document.querySelector('[kepadatan-penduduk]').innerHTML = data['penduduk']['kepadatan'].toLocaleString('id-ID') + ' jiwa/km²';
+    document.querySelector('[usia-produktif]').innerHTML = data['penduduk']['usiaProduktif'].toLocaleString('id-ID') + '%';
     document.querySelector('[sex-ratio]').innerHTML = data['penduduk']['sexRatio'].toLocaleString('id-ID');
     document.querySelector('[jumlah-jiwa]').innerHTML = data['penduduk']['jumlahJiwa'].toLocaleString('id');
     document.querySelector('[jumlah-pria]').innerHTML = data['penduduk']['pria'].toLocaleString('id-ID');
@@ -405,10 +405,10 @@ onValue(ref(db, 'demografi/dataJumlah'), (items) => {
                 vertical: 0
             }
         }
-    
+
     }
-    
+
     var chartGender = new ApexCharts(document.querySelector("#chart-gender"), optionsGender);
-    
+
     chartGender.render();
 })
