@@ -254,11 +254,7 @@ onValue(ref(db, 'pendidikan/angkaPutusSekolah'), (items) => {
 onValue(ref(db, 'pendidikan/perguruanTinggi'), (items) => {
     const data = items.val()
     data.forEach(item => {
-        const dataItem = [item.namaPT, item.mahasiswa, item.dosen, item.status]
+        const dataItem = [item.namaPt, item.mahasiswa, item.dosen, item.status]
         tambahBaris('table-perguruan-tinggi', dataItem)
     });
 })
-
-
-
-

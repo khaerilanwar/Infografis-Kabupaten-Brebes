@@ -65,3 +65,4 @@ onValue(ref(db, 'dashboard/ipm'), (items) => {
   var chartProfileVisit = new ApexCharts(document.querySelector("#chart-profile-visit"), optionsProfileVisit);
   chartProfileVisit.render();
 });
+

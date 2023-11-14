@@ -273,7 +273,7 @@
         </aside>
         <!--  Sidebar End -->
         <!--  Main wrapper -->
-        <div class="body-wrapper" style="background-color: #A6F6FF;">
+        <div class="body-wrapper custom">
             <!--  Header Start -->
             <header class="app-header">
                 <nav class="navbar navbar-expand-lg navbar-light border-bottom border-2">
@@ -292,7 +292,7 @@
                 </nav>
             </header>
             <!--  Header End -->
-            <div class="container-fluid text-black">
+            <div class="container-fluid">
                 <!-- JUDUL -->
                 <div class="row mb-3">
                     <div class="col">
@@ -301,138 +301,128 @@
                 </div>
                 <!-- END JUDUL -->
 
-                <div class="row mb-3" id="baris-pertama">
-                    <div class="col-md-5 bg-white rounded shadow-sm p-3">
-                        <h4 class="text-center mb-3">JUMLAH ASN</h4>
-                        <div class="row mb-4">
-                            <div class="col">
-                                <label for="pns-pria" class="form-label ps-1">PNS Laki-laki</label>
-                                <input type="text" id="pns-pria" class="form-control" placeholder="Masukkan Jumlah ASN">
-                            </div>
-                            <div class="col">
-                                <label for="pns-wanita" class="form-label ps-1">PNS Perempuan</label>
-                                <input type="text" id="pns-wanita" class="form-control"
-                                    placeholder="Masukkan Jumlah ASN">
-                            </div>
+                <div class="row mb-3">
+                    <div class="col-md-9 bg-white rounded p-3">
+                        <h4 class="text-center mb-3">Grafik APM, APK dan APS</h4>
+                        <div class="row" id="data-grafik-ap">
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <label for="pppk-pria" class="form-label ps-1">PPPK Laki-laki</label>
-                                <input type="text" id="pppk-pria" class="form-control"
-                                    placeholder="Masukkan Jumlah ASN">
-                            </div>
-                            <div class="col">
-                                <label for="pppk-wanita" class="form-label ps-1">PPPK Perempuan</label>
-                                <input type="text" id="pppk-wanita" class="form-control"
-                                    placeholder="Masukkan Jumlah ASN">
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-primary mt-3 float-end" data-button="jumlah-asn">Update
+                        <button data-button="grafik-ap" type="button" class="btn btn-primary mx-auto d-block">Update
                             Data</button>
                     </div>
-                    <div class="col-md-7 px-0 ps-md-2 mt-2 mt-md-0">
-                        <div class="bg-white rounded shadow-sm p-3 d-block">
-                            <h4 class="text-center mb-3">Pejabat Kabupaten Brebes</h4>
-                            <div class="row mb-4">
-                                <div class="col-6">
-                                    <label for="fungsional-tertentu" class="form-label">Fungsional Tertentu</label>
-                                    <input type="text" class="form-control" id="fungsional-tertentu"
-                                        placeholder="Jumlah Pejabat JFT">
+
+                    <div class="col-md-3 p-0 mt-3 mt-md-0 ps-md-3">
+                        <div class="bg-white rounded p-3">
+                            <h4 class="text-center">Anak Putus Sekolah</h4>
+                            <div class="mt-3">
+                                <div class="mb-3">
+                                    <label for="sd-putus-sekolah" class="form-label">Jumlah Putus Sekolah
+                                        SD</label>
+                                    <input type="text" class="form-control" id="sd-putus-sekolah"
+                                        placeholder="Jumlah Anak Putus Sekolah">
                                 </div>
-                                <div class="col-6">
-                                    <label for="fungsional-umum" class="form-label">Fungsional Umum</label>
-                                    <input type="text" class="form-control" id="fungsional-umum"
-                                        placeholder="Jumlah Pejabat JFU">
+                                <div class="mb-3">
+                                    <label for="smp-putus-sekolah" class="form-label">Jumlah Putus Sekolah
+                                        SMP</label>
+                                    <input type="text" class="form-control" id="smp-putus-sekolah"
+                                        placeholder="Jumlah Anak Putus Sekolah">
                                 </div>
+                                <button type="button" class="btn btn-primary d-block mx-auto"
+                                    data-button="anak-putus-sekolah">Update Data</button>
                             </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <label for="fungsional-umum" class="form-label">Pejabat Eselon II</label>
-                                    <input type="text" class="form-control" id="eselon2" placeholder="Jumlah Eselon II">
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="fungsional-umum" class="form-label">Pejabat Eselon III</label>
-                                    <input type="text" class="form-control" id="eselon3"
-                                        placeholder="Jumlah Eselon III">
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="fungsional-umum" class="form-label">Pejabat Eselon IV</label>
-                                    <input type="text" class="form-control" id="eselon4" placeholder="Jumlah Eselon IV">
-                                </div>
-                            </div>
-                            <button type="button" class="btn btn-primary mt-3 d-block ms-auto"
-                                data-button="struktural-fungsional">Update
-                                Data</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="row mb-3" id="baris-kedua">
-                    <div class="col-md-4 bg-white rounded shadow-sm p-3">
-                        <h4 class="text-center">Total SKPD Kabupaten Brebes</h4>
-                        <div class="px-3 mt-4" id="data-skpd">
-                            <div class="mb-3">
-                                <label for="sekda" class="form-label">Sekretariat Daerah</label>
-                                <input type="text" class="form-control" id="sekda"
-                                    placeholder="Jumlah Sekretariat Daerah">
+                <div class="row mb-3">
+                    <div class="col-md-4 bg-white rounded p-3">
+                        <h4 class="text-center">Angka Putus Sekolah</h4>
+                        <div class="row mt-4" id="angka-putus-sekolah">
+                            <div class="col-6 mb-3">
+                                <label for="aps-sd" class="form-label">Presentase APS SD</label>
+                                <input type="text" class="form-control" id="aps-sd"
+                                    placeholder="Masukkan Presentase APS">
                             </div>
-                            <div class="mb-3">
-                                <label for="dprd" class="form-label">Sekretariat DPRD</label>
-                                <input type="text" class="form-control" id="dprd" placeholder="Jumlah Sekretariat DPRD">
+                            <div class="col-6 mb-3">
+                                <label for="aps-mi" class="form-label">Presentase APS MI</label>
+                                <input type="text" class="form-control" id="aps-mi"
+                                    placeholder="Masukkan Presentase APS">
                             </div>
-                            <div class="mb-3">
-                                <label for="inspektorat" class="form-label">Inspektorat</label>
-                                <input type="text" class="form-control" id="inspektorat"
-                                    placeholder="Jumlah Inspektorat">
+                            <div class="col-6 mb-3">
+                                <label for="aps-smp" class="form-label">Presentase APS SMP</label>
+                                <input type="text" class="form-control" id="aps-smp"
+                                    placeholder="Masukkan Presentase APS">
                             </div>
-                            <div class="mb-3">
-                                <label for="dinas" class="form-label">Dinas</label>
-                                <input type="text" class="form-control" id="dinas" placeholder="Jumlah Dinas">
+                            <div class="col-6 mb-3">
+                                <label for="aps-mts" class="form-label">Presentase APS MTS</label>
+                                <input type="text" class="form-control" id="aps-mts"
+                                    placeholder="Masukkan Presentase APS">
                             </div>
-                            <div class="mb-3">
-                                <label for="badan" class="form-label">Badan</label>
-                                <input type="text" class="form-control" id="badan" placeholder="Jumlah Badan">
+                        </div>
+                        <div class="mb-3">
+                            <label for="deskripsi-aps" class="form-label">Deskripsi</label>
+                            <textarea class="form-control" placeholder="Tuliskan Deskripsi" id="deskripsi-aps"
+                                rows="5"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary d-block mx-auto"
+                            data-button="presentase-aps">Update Data</button>
+                    </div>
+                    <div class="col-md-4 p-0 mt-3 mt-md-0 ps-md-3">
+                        <div class="bg-white rounded p-3">
+                            <h4 class="text-center">Jumlah Guru</h4>
+                            <div class="row" id="jumlah-guru">
                             </div>
-                            <div class="mb-3">
-                                <label for="satpolPP" class="form-label">Satpol PP</label>
-                                <input type="text" class="form-control" id="satpolPP" placeholder="Jumlah Satpol PP">
-                            </div>
-                            <div class="mb-3">
-                                <label for="kecamatan" class="form-label">Kecamatan</label>
-                                <input type="text" class="form-control" id="kecamatan" placeholder="Jumlah Kecamatan">
-                            </div>
-                            <div class="mb-3">
-                                <label for="kelurahan" class="form-label">Kelurahan</label>
-                                <input type="text" class="form-control" id="kelurahan" placeholder="Jumlah Kelurahan">
-                            </div>
-                            <div class="mb-3">
-                                <label for="rsud" class="form-label">RSUD</label>
-                                <input type="text" class="form-control" id="rsud" placeholder="Jumlah RSUD">
-                            </div>
-                            <button type="button" data-button="total-skpd"
-                                class="btn btn-primary mx-auto d-block w-50">Update Data</button>
+                            <button data-button="guru-brebes" type="button"
+                                class="btn btn-primary d-block mx-auto">Update Data</button>
                         </div>
                     </div>
-                    <div class="col-md-8 px-0 ps-md-2 mt-2 mt-md-0">
-                        <div class="bg-white rounded shadow-sm p-3 d-block">
-                            <h4 class="text-center mb-3">ASN Berdasarkan Pendidikan</h4>
-                            <table class="table table-hover">
-                                <thead class="text-black text-center">
-                                    <tr>
-                                        <th>Jenjang Pendidikan</th>
-                                        <th>Perempuan</th>
-                                        <th>Laki-laki</th>
-                                        <th>Jumlah</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="tabel-asn-pendidikan">
-                                </tbody>
-                            </table>
-                            <button type="button" class="btn w-50 btn-primary d-block mx-auto"
-                                data-button="pendidikan-asn">Update Data</button>
+                    <div class="col-md-4 p-0 mt-3 mt-md-0 ps-md-3">
+                        <div class="bg-white rounded p-3">
+                            <h4 class="text-center">Jumlah Siswa</h4>
+                            <div class="row" id="jumlah-siswa">
+                            </div>
+                            <button data-button="siswa-brebes" type="button"
+                                class="btn btn-primary d-block mx-auto">Update Data</button>
                         </div>
                     </div>
                 </div>
+
+                <div class="row mb-3">
+                    <div class="col-12 mx-auto bg-white rounded p-3">
+                        <table class="table table-hover">
+                            <thead class="text-black text-center">
+                                <tr>
+                                    <th>Sekolah/Perguruan Tinggi</th>
+                                    <th>Negeri</th>
+                                    <th>Swasta</th>
+                                    <th>Jumlah</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabel-data-akademi">
+                            </tbody>
+                        </table>
+                        <button type="button" class="btn btn-primary w-50 d-block mx-auto"
+                            data-button="data-akademi">Update Data</button>
+                    </div>
+                </div>
+
+                <!-- <div class="row">
+                    <div class="col-12 mx-auto bg-white rounded p-3">
+                        <table class="table table-hover">
+                            <thead class="text-black text-center">
+                                <tr>
+                                    <th>Perguruan Tinggi</th>
+                                    <th>Mahasiswa</th>
+                                    <th>Dosen</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabel-data-pt">
+                            </tbody>
+                        </table>
+                        <button type="button" class="btn btn-primary w-50 d-block mx-auto" data-button="data-pt">Update
+                            Data</button>
+                    </div>
+                </div> -->
 
             </div>
 
@@ -444,7 +434,6 @@
             <!-- END FOOTER -->
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -452,7 +441,7 @@
     <script src="../assets/js/app.min.js"></script>
     <script src="../assets/libs/apexcharts-bundle/dist/apexcharts.js"></script>
     <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
-    <script type="module" src="../assets/js/admin/pemerintahan.js"></script>
+    <script type="module" src="../assets/js/admin/pendidikan.js"></script>
 </body>
 
 </html>

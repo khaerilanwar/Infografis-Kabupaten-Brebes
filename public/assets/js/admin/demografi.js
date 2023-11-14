@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
 import { getDatabase, ref, onValue, update, remove } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
-import { keyToWord, camelCase, feedbackData, capitalizeWords, deleteElement } from "../libs.js";
+import { keyToWord, camelCase, feedbackData, capitalizeWords, deleteElement, formatAngka, formatAngkaSistem } from "../libs.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCtZWZ7x8d1l2cTWgc-kFO5ZlzXV7dcPaM",
@@ -15,7 +16,19 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth();
 const db = getDatabase();
+
+// Mengecek apakah sudah login
+// Jika belum maka akan redirect ke halaman login
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        const id = user.uid
+        console.log('Sudah Login')
+    } else {
+        window.location.href = '/login.html'
+    }
+})
 
 // Data Kuantitas Demografi
 const keyKuantitas = 'demografi/dataJumlah'
@@ -51,6 +64,13 @@ onValue(ref(db, keyKuantitas), items => {
 
     }
 
+    const angkaInputElements = document.getElementsByClassName('angka-input')
+    for (let angkaInputElement of angkaInputElements) {
+        angkaInputElement.addEventListener('input', function () {
+            angkaInputElement.value = formatAngka(this.value.replace(/\./g, ''))
+        })
+    }
+
     document.querySelector('button[data-button="kuantitas-demografi"]').addEventListener('click', function () {
         // Mengekstraksi data baru
         const dataUpdates = {}
@@ -61,12 +81,13 @@ onValue(ref(db, keyKuantitas), items => {
             let idInput = inputKuantitas[ai].getAttribute('id')
             if (keyPenduduk.includes(idInput)) {
                 // console.log(`${camelCase(idInput)} : penduduk`)
-                dataPenduduk[camelCase(idInput)] = (inputKuantitas[ai].value.includes(',')) ? parseFloat(inputKuantitas[ai].value.replace(',', '.')) : parseInt(inputKuantitas[ai].value.replace(/\D/g, ''))
+                dataPenduduk[camelCase(idInput)] = formatAngkaSistem(inputKuantitas[ai].value)
             } else {
-                dataUpdates[camelCase(idInput)] = (inputKuantitas[ai].value.includes(',')) ? parseFloat(inputKuantitas[ai].value.replace(',', '.')) : parseInt(inputKuantitas[ai].value.replace(/\D/g, ''))
+                dataUpdates[camelCase(idInput)] = formatAngkaSistem(inputKuantitas[ai].value)
             }
         }
         dataUpdates['penduduk'] = dataPenduduk
+        console.log(dataUpdates)
 
         const updatesData = {}
         updatesData[keyKuantitas] = data
@@ -88,10 +109,17 @@ onValue(ref(db, keyLahanBukanSawah), items => {
     deleteElement(idWrapper)
     // Menambahkan element input ke dalam HTML
     for (let lbs in data) {
-        let labelTeks = `Luas Lahan ${capitalizeWords(lbs)}`
+        let labelTeks = `Luas Lahan ${capitalizeWords(lbs)} (ha)`
         let placeholderInput = `Masukkan Luas ${capitalizeWords(lbs)}`
         tambahInputLabelLahan(idWrapper, lbs, labelTeks, placeholderInput, data[lbs].toLocaleString('id-ID'))
         // console.log(labelTeks)
+    }
+
+    const elementsInputAngka = document.getElementById('form-bukan-sawah').querySelectorAll('input')
+    for (let elementInputAngka of elementsInputAngka) {
+        elementInputAngka.addEventListener('input', function () {
+            elementInputAngka.value = formatAngka(this.value.replace(/\./g, ''))
+        })
     }
 
     document.querySelector('button[data-button="lahan-bukan-sawah"]').addEventListener('click', function () {
@@ -100,7 +128,7 @@ onValue(ref(db, keyLahanBukanSawah), items => {
         // Mengekstraksi data update
         const elementInput = document.getElementById('form-bukan-sawah').querySelectorAll('input')
         for (let ei = 0; ei < elementInput.length; ei++) {
-            dataUpdates[elementInput[ei].getAttribute('id')] = parseFloat(elementInput[ei].value.replace(',', '.'))
+            dataUpdates[elementInput[ei].getAttribute('id')] = formatAngkaSistem(elementInput[ei].value)
         }
         // Melakukan update data di database
         const updatesData = {}
@@ -129,13 +157,20 @@ onValue(ref(db, keyLuasKemiringanLahan), items => {
         tambahInputLabelLahan(idWrapper, idInput, labelTeks, placeholderInput, data[kl].toLocaleString('id-ID'))
     }
 
+    const elementsInputAngka = document.getElementById('form-kemiringan').querySelectorAll('input')
+    for (let elementInputAngka of elementsInputAngka) {
+        elementInputAngka.addEventListener('input', function () {
+            elementInputAngka.value = formatAngka(this.value.replace(/\./g, ''))
+        })
+    }
+
     document.querySelector('button[data-button="luas-kemiringan-lahan"]').addEventListener('click', function () {
         // Mendefinisikan object untuk menyimpan data terbaru
         const dataUpdates = {}
         // Mengekstraksi data update
         const elementInput = document.getElementById('form-kemiringan').querySelectorAll('input')
         for (let ei = 0; ei < elementInput.length; ei++) {
-            dataUpdates[elementInput[ei].getAttribute('id')] = parseFloat(elementInput[ei].value.replace(',', '.'))
+            dataUpdates[elementInput[ei].getAttribute('id')] = formatAngkaSistem(elementInput[ei].value)
         }
         // Melakukan update data di database
         const updatesData = {}
@@ -162,6 +197,15 @@ onValue(ref(db, keyWilayah), items => {
         tambahInputLabelLahan(idWrapper, idInput, labelTeks, placeholderInput, data[w].toLocaleString('id-ID'))
     }
 
+    const elementsInputAngka = document.getElementById('form-wilayah').querySelectorAll('input')
+    for (let elementInputAngka of elementsInputAngka) {
+        if (elementInputAngka.getAttribute('id') !== 'nama-kecamatan-terluas') {
+            elementInputAngka.addEventListener('input', function () {
+                elementInputAngka.value = formatAngka(this.value.replace(/\./g, ''))
+            })
+        }
+    }
+
     document.querySelector('button[data-button="wilayah-brebes"]').addEventListener('click', function () {
         // Mendefinisikan object untuk menyimpan data terbaru
         const dataUpdates = {}
@@ -171,7 +215,7 @@ onValue(ref(db, keyWilayah), items => {
             if (elementInput[ei].getAttribute('id') === 'nama-kecamatan-terluas') {
                 dataUpdates[camelCase(elementInput[ei].getAttribute('id'))] = elementInput[ei].value
             } else {
-                dataUpdates[camelCase(elementInput[ei].getAttribute('id'))] = parseFloat(elementInput[ei].value.replace(',', '.'))
+                dataUpdates[camelCase(elementInput[ei].getAttribute('id'))] = formatAngkaSistem(elementInput[ei].value)
             }
         }
         // Melakukan update data di database
@@ -239,4 +283,12 @@ function tambahInputLabelKuantitas(idInput, labelTeks, placeholderInput, valueIn
     rowInput.appendChild(col)
 }
 
-console.log(window.location.pathname)
+// Tombol untuk melakukan logout
+const buttonLogout = document.querySelector('span[data-button="logout"]')
+buttonLogout.addEventListener('click', () => {
+    signOut(auth).then(() => {
+        window.location.href = '/login.html'
+    }).catch((error) => {
+        feedbackData('error', error)
+    })
+})

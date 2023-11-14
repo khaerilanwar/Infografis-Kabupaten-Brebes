@@ -43,6 +43,34 @@ export function keyToWord(kata) {
     return result
 }
 
+// Fungsi untuk membersihkan . dan replace , menjadi .
+export function formatAngkaSistem(terformat) {
+    // Hapus semua tanda titik (.)
+    terformat = terformat.replace(/\./g, '');
+
+    // Ganti koma (,) dengan titik (.)
+    terformat = terformat.replace(/,/g, '.');
+
+    return parseFloat(terformat);
+}
+
+// Fungsi untuk merubah angka menjadi format Indonesia
+// Menambahkan . jika ribuan dan , jika ada
+export function formatAngka(angka) {
+    let number_string = angka.toString(),
+        split = number_string.split(','),
+        sisa = split[0].length % 3,
+        rupiah = split[0].substr(0, sisa),
+        ribuan = split[0].substr(sisa).match(/\d{1,3}/gi);
+
+    if (ribuan) {
+        let separator = sisa ? '.' : '';
+        rupiah += separator + ribuan.join('.');
+    }
+
+    return split[1] != undefined ? rupiah + ',' + split[1] : rupiah
+}
+
 // Mengkonversi ke id element html ke camelcase
 export function camelCase(text) {
     return text.replace(/-([a-z])/g, function (match, group) {
@@ -71,11 +99,12 @@ export function feedbackData(icon, message) {
 }
 
 // Fungsi untuk mengurutkan data JSON secara custom
+// Variabel urutan berbentuk array
 export function sortCustom(urutan, data) {
     // Mengurutkan data berdasarkan urutan yang diinginkan
     var dataUrutkan = {};
     urutan.forEach(function (kunci) {
-        if (data[kunci]) {
+        if (data[kunci] || data[kunci] === 0) {
             dataUrutkan[kunci] = data[kunci];
         }
     });
@@ -102,7 +131,7 @@ export function deleteElement(idElement) {
 // Fungsi untuk mengupdate data
 // const updatesData = {}
 // updatesData['dashboard/jumlah'] = data
-// updatesData['dashboard/jumlah'] = dataUpdate
+// updatesData['dashboard/jumlah'] = dataUpdates
 // update(ref(db), updatesData)
 //     .then(feedbackData('success', 'Berhasil perbarui data'))
 //     .catch((error) => {

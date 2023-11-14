@@ -1,4 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
 import { getDatabase, ref, onValue, update, remove } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
 import { feedbackData } from "../libs.js";
 
@@ -15,7 +16,19 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth();
 const db = getDatabase();
+
+// Mengecek apakah sudah login
+// Jika belum maka akan redirect ke halaman login
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        const id = user.uid
+        console.log('Sudah Login')
+    } else {
+        window.location.href = '/login.html'
+    }
+})
 
 // Membaca data kuantitas dashboard
 onValue(ref(db, 'dashboard/jumlah'), (items) => {
@@ -200,3 +213,13 @@ function tambahInput(atributes) {
 
     return document.getElementById('form-ipm').appendChild(row)
 }
+
+// Tombol untuk melakukan logout
+const buttonLogout = document.querySelector('span[data-button="logout"]')
+buttonLogout.addEventListener('click', () => {
+    signOut(auth).then(() => {
+        window.location.href = '/login.html'
+    }).catch((error) => {
+        feedbackData('error', error)
+    })
+})
