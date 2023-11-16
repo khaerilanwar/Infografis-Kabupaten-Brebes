@@ -194,6 +194,7 @@ onValue(ref(db, 'pemerintahan/skpd'), (items) => {
     document.querySelector('[kecamatan]').innerHTML = data.kecamatan;
     document.querySelector('[kelurahan]').innerHTML = data.kelurahan;
     document.querySelector('[rsud]').innerHTML = data.rsud;
+    document.querySelector('[skpd]').innerHTML = `${totalSKPD} SKPD`
 })
 
 onValue(ref(db, 'pemerintahan/pejabat'), (items) => {
