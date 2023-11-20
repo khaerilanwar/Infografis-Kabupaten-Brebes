@@ -2,14 +2,13 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebas
 import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCtZWZ7x8d1l2cTWgc-kFO5ZlzXV7dcPaM",
-  authDomain: "infografis-kominfo.firebaseapp.com",
-  databaseURL: "https://infografis-kominfo-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "infografis-kominfo",
-  storageBucket: "infografis-kominfo.appspot.com",
-  messagingSenderId: "894598154392",
-  appId: "1:894598154392:web:98143b3f2efb2dd7e8e8ed",
-  measurementId: "G-DHSWEGSG03"
+  apiKey: "AIzaSyDOe9zi-P7XUhGWGF8Q6s9LbXjA2bNaSQU",
+  authDomain: "dinkominfotik-brebes.firebaseapp.com",
+  projectId: "dinkominfotik-brebes",
+  storageBucket: "dinkominfotik-brebes.appspot.com",
+  messagingSenderId: "719071733359",
+  appId: "1:719071733359:web:b4f7f8ca95c7b170430f9a",
+  measurementId: "G-WN588GZHVC"
 };
 
 // Initialize Firebase

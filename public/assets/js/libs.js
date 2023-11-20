@@ -117,6 +117,10 @@ export function capitalizeWords(string) {
     return string.replace(/\b\w/g, (match) => match.toUpperCase());
 }
 
+export function capitalizeFirstLetter(inputString) {
+    return inputString.charAt(0).toUpperCase() + inputString.slice(1);
+}
+
 // Fungsi untuk menghapus element untuk mengantisipasi jika sudah ada element
 export function deleteElement(idElement) {
     const elementForm = document.getElementById(idElement)
