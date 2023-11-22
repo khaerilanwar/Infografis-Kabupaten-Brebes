@@ -47,6 +47,7 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
         const uid = user.uid
         console.log(uid)
+        window.location.href = '/admin'
     } else {
         console.log('tidak masuk')
     }

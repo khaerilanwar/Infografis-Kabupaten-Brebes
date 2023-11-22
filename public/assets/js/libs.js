@@ -1,3 +1,20 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+import { getDatabase, ref, update } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDOe9zi-P7XUhGWGF8Q6s9LbXjA2bNaSQU",
+    authDomain: "dinkominfotik-brebes.firebaseapp.com",
+    projectId: "dinkominfotik-brebes",
+    storageBucket: "dinkominfotik-brebes.appspot.com",
+    messagingSenderId: "719071733359",
+    appId: "1:719071733359:web:b4f7f8ca95c7b170430f9a",
+    measurementId: "G-WN588GZHVC"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getDatabase();
+
 // Fungsi untuk menambahkan baris dalam tabel
 // Pastikan data dalam bentuk Array 
 // dan isi elemen array urut sesuai dengan tabel penyajian
@@ -133,11 +150,13 @@ export function deleteElement(idElement) {
 // remove(ref(db, 'mahasiswa/2'))
 
 // Fungsi untuk mengupdate data
-// const updatesData = {}
-// updatesData['dashboard/jumlah'] = data
-// updatesData['dashboard/jumlah'] = dataUpdates
-// update(ref(db), updatesData)
-//     .then(feedbackData('success', 'Berhasil perbarui data'))
-//     .catch((error) => {
-//         feedbackData('error', error)
-//     })
+export function updateData(keyDb, dataUpdates, data) {
+    const updatesData = {}
+    updatesData[keyDb] = data
+    updatesData[keyDb] = dataUpdates
+    update(ref(db), updatesData)
+        .then(feedbackData('success', 'Berhasil perbarui data'))
+        .catch((error) => {
+            feedbackData('error', error)
+        })
+}

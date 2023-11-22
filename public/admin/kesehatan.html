@@ -303,51 +303,265 @@
 
                 <div class="row mb-3">
                     <div class="col-md-5">
-                        <div class="bg-white rounded p-4 shadow-sm mb-3 mb-md-0">
-                            <div class="mb-4">
+                        <div class="mb-3 mb-md-0">
+                            <div class="mb-4 bg-white rounded p-4 shadow-sm ">
                                 <h4 class="text-center mb-3">Jumlah Pengguna BPJS</h4>
-                                <div class="row g-3">
+                                <div class="row g-3" id="bpjs">
                                     <div class="col-md-6">
-                                        <label for="bpjs-pbi" class="form-label">BPJS PBI</label>
-                                        <input type="text" class="form-control" id="bpjs-pbi" placeholder="BPJS PBI">
+                                        <label for="pbi" class="form-label">BPJS PBI</label>
+                                        <input type="text" class="form-control" id="pbi" placeholder="BPJS PBI">
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="bpjs-non-pbi" class="form-label">BPJS NON PBI</label>
-                                        <input type="text" class="form-control" id="bpjs-non-pbi"
-                                            placeholder="BPJS NON PBI">
+                                        <label for="non-pbi" class="form-label">BPJS NON PBI</label>
+                                        <input type="text" class="form-control" id="non-pbi" placeholder="BPJS NON PBI">
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-primary d-block mx-auto  mt-3">Update</button>
+                                <button type="button" data-button="bpjs"
+                                    class="btn btn-primary d-block mx-auto  mt-3">Update</button>
                             </div>
-                            <div class="mb-4">
-                                <h4 class="text-center mb-3">Jumlah Pengguna BPJS</h4>
-                                <div class="row g-3">
+                            <div class="mb-4 bg-white rounded p-4 shadow-sm">
+                                <h4 class="text-center mb-3">Kematian Ibu & Bayi</h4>
+                                <div class="row g-3" id="kematian-ibu-bayi">
                                     <div class="col-md-6">
-                                        <label for="bpjs-pbi" class="form-label">BPJS PBI</label>
-                                        <input type="text" class="form-control" id="bpjs-pbi" placeholder="BPJS PBI">
+                                        <label for="kematian-ibu" class="form-label">Kematian Ibu</label>
+                                        <input type="text" class="form-control" id="kematian-ibu"
+                                            placeholder="Jumlah Kematian Ibu">
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="bpjs-non-pbi" class="form-label">BPJS NON PBI</label>
-                                        <input type="text" class="form-control" id="bpjs-non-pbi"
-                                            placeholder="BPJS NON PBI">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="bpjs-non-pbi" class="form-label">BPJS NON PBI</label>
-                                        <input type="text" class="form-control" id="bpjs-non-pbi"
-                                            placeholder="BPJS NON PBI">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="bpjs-non-pbi" class="form-label">BPJS NON PBI</label>
-                                        <input type="text" class="form-control" id="bpjs-non-pbi"
-                                            placeholder="BPJS NON PBI">
+                                        <label for="kematian-bayi" class="form-label">Kematian Bayi</label>
+                                        <input type="text" class="form-control" id="kematian-bayi"
+                                            placeholder="Jumlah Kematian Bayi">
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-primary d-block mx-auto  mt-3">Update</button>
+                                <button type="button" data-button="kematian-ibu-bayi"
+                                    class="btn btn-primary d-block mx-auto  mt-3">Update</button>
                             </div>
+                            <div class="mb-4 bg-white rounded p-4 shadow-sm">
+                                <h4 class="text-center mb-3">Posyandu</h4>
+                                <div class="row g-3" id="posyandu">
+                                    <div class="col-md-6">
+                                        <label for="pratama" class="form-label">Pratama</label>
+                                        <input type="text" class="form-control" id="pratama"
+                                            placeholder="Jumlah Pratama">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="madya" class="form-label">Madya</label>
+                                        <input type="text" class="form-control" id="madya" placeholder="Jumlah Madya">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="purnama" class="form-label">Purnama</label>
+                                        <input type="text" class="form-control" id="purnama"
+                                            placeholder="Jumlah Purnama">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="mandiri" class="form-label">Mandiri</label>
+                                        <input type="text" class="form-control" id="mandiri"
+                                            placeholder="Jumlah Mandiri">
+                                    </div>
+                                </div>
+                                <button type="button" data-button="posyandu"
+                                    class="btn btn-primary d-block mx-auto  mt-3">Update</button>
+                            </div>
+                            <div class="mb-4 bg-white rounded p-4 shadow-sm">
+                                <h4 class="text-center mb-3">Sarana Kesehatan</h4>
+                                <div class="row g-3" id="sarana-kesehatan">
+                                    <div class="col-md-6">
+                                        <label for="sk-rs-swasta" class="form-label">RS Swasta</label>
+                                        <input type="text" class="form-control" id="sk-rs-swasta"
+                                            placeholder="Jumlah RS Swasta">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="sk-rs-pemerintah" class="form-label">RS Pemerintah</label>
+                                        <input type="text" class="form-control" id="sk-rs-pemerintah"
+                                            placeholder="Jumlah RS Pemerintah">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="sk-rs-khusus" class="form-label">RS Khusus</label>
+                                        <input type="text" class="form-control" id="sk-rs-khusus"
+                                            placeholder="Jumlah RS Khusus">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="sk-klinik-pratama" class="form-label">Klinik Pratama</label>
+                                        <input type="text" class="form-control" id="sk-klinik-pratama"
+                                            placeholder="Jumlah Klinik Pratama">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="sk-poliklinik-desa" class="form-label">Poliklinik Desa</label>
+                                        <input type="text" class="form-control" id="sk-poliklinik-desa"
+                                            placeholder="Jumlah Poliklinik Desa">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="sk-puskesmas" class="form-label">Puskesmas</label>
+                                        <input type="text" class="form-control" id="sk-puskesmas"
+                                            placeholder="Jumlah Puskesmas">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="sk-klinik-utama" class="form-label">Klinik Utama</label>
+                                        <input type="text" class="form-control" id="sk-klinik-utama"
+                                            placeholder="Jumlah Klinik Utama">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="pasien-puskesmas" class="form-label">Pasien Puskesmas</label>
+                                        <input type="text" class="form-control" id="pasien-puskesmas"
+                                            placeholder="Jumlah Pasien Puskesmas">
+                                    </div>
+                                </div>
+                                <button type="button" data-button="sarkes-paspus"
+                                    class="btn btn-primary d-block mx-auto  mt-3 w-50">Update</button>
+                            </div>
+
                         </div>
                     </div>
                     <div class="col-md-7">
-                        <div class="bg-white rounded p-4 shadow-sm">
+                        <div>
+                            <div class="bg-white rounded p-4 shadow-sm">
+                                <h4 class="text-center mb-3">Tempat Tidur Rawat Inap</h4>
+                                <div class="row g-3" id="tempat-tidur-rawat-inap">
+                                    <div class="col-md-4">
+                                        <label for="puskesmas" class="form-label">Puskesmas</label>
+                                        <input type="text" class="form-control" id="puskesmas"
+                                            placeholder="Jumlah Puskesmas">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="rs-pemerintah" class="form-label">RS Pemerintah</label>
+                                        <input type="text" class="form-control" id="rs-pemerintah"
+                                            placeholder="Jumlah RS Pemerintah">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="rs-swasta" class="form-label">RS Swasta</label>
+                                        <input type="text" class="form-control" id="rs-swasta"
+                                            placeholder="Jumlah RS Swasta">
+                                    </div>
+                                </div>
+                                <button type="button" data-button="tempat-tidur-rawat-inap"
+                                    class="btn btn-primary d-block mx-auto  mt-3">Update</button>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-md-6 mb-4 mb-md-0">
+                                <div class="bg-white rounded p-4 shadow-sm">
+                                    <h4 class="text-center">Penyakit TBC</h4>
+                                    <div id="penyakit-tbc">
+                                        <div class="mb-3">
+                                            <label for="tbc-laki-laki" class="form-label">Laki-laki</label>
+                                            <input type="text" class="form-control" id="tbc-laki-laki"
+                                                placeholder="Jumlah Penderita">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="tbc-perempuan" class="form-label">Perempuan</label>
+                                            <input type="text" class="form-control" id="tbc-perempuan"
+                                                placeholder="Jumlah Penderita">
+                                        </div>
+                                    </div>
+                                    <button type="button" data-button="penyakit-tbc"
+                                        class="btn btn-primary d-block mx-auto  mt-3">Update</button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="bg-white rounded p-4 shadow-sm">
+                                    <h4 class="text-center">Penyakit DBD</h4>
+                                    <div id="penyakit-dbd">
+                                        <div class="mb-3">
+                                            <label for="dbd-laki-laki" class="form-label">Laki-laki</label>
+                                            <input type="text" class="form-control" id="dbd-laki-laki"
+                                                placeholder="Jumlah Penderita">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="dbd-perempuan" class="form-label">Perempuan</label>
+                                            <input type="text" class="form-control" id="dbd-perempuan"
+                                                placeholder="Jumlah Penderita">
+                                        </div>
+                                    </div>
+                                    <button type="button" data-button="penyakit-dbd"
+                                        class="btn btn-primary d-block mx-auto  mt-3">Update</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <div class="bg-white rounded p-4 shadow-sm" id="tenaga-medis">
+                                <h4 class="text-center mb-3">Tenaga Medis</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div idtm="dokter-umum" class="mx-2 mb-3">
+                                            <h5 class="text-center">Dokter Umum</h5>
+                                            <div class="mb-3">
+                                                <label for="asn" class="form-label">ASN</label>
+                                                <input type="text" class="form-control" id="asn"
+                                                    placeholder="Jumlah Dokter Umum ASN">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="non-asn" class="form-label">NON ASN</label>
+                                                <input type="text" class="form-control" id="non-asn"
+                                                    placeholder="Jumlah Dokter Umum NON ASN">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div idtm="dokter-spesialis" class="mx-2 mb-3">
+                                            <h5 class="text-center">Dokter Spesialis</h5>
+                                            <div class="mb-3">
+                                                <label for="asn" class="form-label">ASN</label>
+                                                <input type="text" class="form-control" id="asn"
+                                                    placeholder="Jumlah Dokter Spesialis ASN">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="non-asn" class="form-label">NON ASN</label>
+                                                <input type="text" class="form-control" id="non-asn"
+                                                    placeholder="Jumlah Dokter Spesialis NON ASN">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div idtm="dokter-gigi" class="mx-2 mb-3">
+                                            <h5 class="text-center">Dokter Gigi</h5>
+                                            <div class="mb-3">
+                                                <label for="asn" class="form-label">ASN</label>
+                                                <input type="text" class="form-control" id="asn"
+                                                    placeholder="Jumlah Dokter Gigi ASN">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="non-asn" class="form-label">NON ASN</label>
+                                                <input type="text" class="form-control" id="non-asn"
+                                                    placeholder="Jumlah Dokter Gigi NON ASN">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div idtm="bidan" class="mx-2 mb-3">
+                                            <h5 class="text-center">Bidan</h5>
+                                            <div class="mb-3">
+                                                <label for="asn" class="form-label">ASN</label>
+                                                <input type="text" class="form-control" id="asn"
+                                                    placeholder="Jumlah Bidan ASN">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="non-asn" class="form-label">NON ASN</label>
+                                                <input type="text" class="form-control" id="non-asn"
+                                                    placeholder="Jumlah Bidan NON ASN">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 offset-md-3">
+                                        <div idtm="perawat-mantri" class="mx-2 mb-3">
+                                            <h5 class="text-center">Perawat/Mantri</h5>
+                                            <div class="mb-3">
+                                                <label for="asn" class="form-label">ASN</label>
+                                                <input type="text" class="form-control" id="asn"
+                                                    placeholder="Jumlah Perawat/Mantri ASN">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="non-asn" class="form-label">NON ASN</label>
+                                                <input type="text" class="form-control" id="non-asn"
+                                                    placeholder="Jumlah Perawat/Mantri NON ASN">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" data-button="tenaga-medis"
+                                    class="btn btn-primary d-block mx-auto w-50">Update</button>
+                            </div>
                         </div>
                     </div>
                 </div>
