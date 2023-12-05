@@ -42,8 +42,8 @@
                             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                             <span class="hide-menu">Home</span>
                         </li>
-                        <li class="sidebar-item selected">
-                            <a class="sidebar-link active" href="/admin/index.html" aria-expanded="false">
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="/admin/index.html" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-layout-dashboard"></i>
                                 </span>
@@ -301,54 +301,155 @@
                 </div>
                 <!-- END JUDUL -->
 
-                <div class="row">
-                    <div class="col-md-6 bg-white rounded p-3">
-                        <h4 class="text-center mb-3">Dashboard Kuantitas</h4>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="jumlah-penduduk" class="form-label">Jumlah Penduduk</label>
-                                    <input type="text" class="form-control angka-input" id="jumlah-penduduk">
+                <div class="row mb-3">
+                    <div class="col-md-5">
+                        <div class="bg-white rounded p-4 shadow-sm mb-3 mb-md-0">
+                            <h4 class="text-center mb-4">Kondisi Jalan (km)</h4>
+                            <div class="row g-3" id="kondisi-jalan">
+                                <div class="col-md-6">
+                                    <label for="baik" class="form-label">Baik</label>
+                                    <input type="text" class="form-control" id="baik" placeholder="Kondisi Jalan Baik">
                                 </div>
-                                <div class="mb-3">
-                                    <label for="jumlah-kecamatan" class="form-label">Jumlah
-                                        Kecamatan</label>
-                                    <input type="text" class="form-control angka-input" id="jumlah-kecamatan">
+                                <div class="col-md-6">
+                                    <label for="sedang" class="form-label">Sedang</label>
+                                    <input type="text" class="form-control" id="sedang"
+                                        placeholder="Kondisi Jalan Sedang">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="rusak" class="form-label">Rusak</label>
+                                    <input type="text" class="form-control" id="rusak"
+                                        placeholder="Kondisi Jalan Rusak">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="rusak-berat" class="form-label">Rusak Berat</label>
+                                    <input type="text" class="form-control" id="rusak-berat"
+                                        placeholder="Kondisi Jalan Rusak Berat">
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="jumlah-kelurahan" class="form-label">Jumlah Kelurahan</label>
-                                    <input type="text" class="form-control angka-input" id="jumlah-kelurahan">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="jumlah-desa" class="form-label">Jumlah
-                                        Desa</label>
-                                    <input type="text" class="form-control angka-input" id="jumlah-desa">
-                                </div>
-                            </div>
+                            <button type="button" data-button="kondisi-jalan"
+                                class="btn btn-primary d-block mx-auto w-50 mt-3">Update</button>
                         </div>
-                        <button type="button" class="btn btn-primary float-end" data-button="jumlah">Update
-                            Data</button>
                     </div>
-
-                    <div class="col-md-6 p-0 mt-3 mt-md-0 ps-md-3">
-                        <div class="bg-white rounded p-3">
-                            <h4 class="text-center">Indeks Pembangunan Manusia (IPM)</h4>
-                            <div class="d-flex justify-content-end my-3">
-                                <button type="button" class="btn btn-primary" id="button-add-input">
-                                    <i class="fa-solid fa-plus"></i> Tambah Data
-                                </button>
+                    <div class="col-md-3">
+                        <div class="bg-white rounded p-4 shadow-sm">
+                            <h4 class="text-center mb-4">Jembatan</h4>
+                            <div id="jembatan">
+                                <div class="mb-3">
+                                    <label for="jumlah" class="form-label">Jumlah Jembatan</label>
+                                    <input type="text" class="form-control" id="jumlah" placeholder="Jumlah Jembatan">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="panjang-jembatan" class="form-label">Panjang Jembatan (m)</label>
+                                    <input type="text" class="form-control" id="panjang-jembatan"
+                                        placeholder="Panjang Jembatan">
+                                </div>
                             </div>
-                            <div id="form-ipm">
+                            <button type="button" data-button="jembatan"
+                                class="btn btn-primary d-block mx-auto w-50 mt-3">Update</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bg-white rounded p-4 shadow-sm">
+                            <h4 class="text-center mb-4">Akses Sanitasi</h4>
+                            <div id="akses-sanitasi">
+                                <div class="mb-3">
+                                    <label for="jumlah-penduduk-dengan-akses-sanitasi" class="form-label">Jumlah
+                                        Penduduk dengan Akses Sanitasi</label>
+                                    <input type="text" class="form-control" id="jumlah-penduduk-dengan-akses-sanitasi"
+                                        placeholder="Jumlah Penduduk dengan Akses Sanitasi">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="prosentase-penduduk-dengan-akses-sanitasi" class="form-label">Prosentase
+                                        Penduduk dengan Akses
+                                        Sanitasi %</label>
+                                    <input type="text" class="form-control"
+                                        id="prosentase-penduduk-dengan-akses-sanitasi"
+                                        placeholder="Masukkan Angkanya Saja">
+                                </div>
                             </div>
-                            <div class="d-flex justify-content-center mt-4">
-                                <button type="button" class="btn btn-primary" data-button="ipm">Update Data</button>
-                            </div>
+                            <button type="button" data-button="akses-sanitasi"
+                                class="btn btn-primary d-block mx-auto mt-3 w-50">Update</button>
                         </div>
                     </div>
                 </div>
 
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <div class="bg-white rounded p-4 shadow-sm mb-3 mb-md-0">
+                            <h4 class="text-center mb-4">Panjang Jalan (km)</h4>
+                            <div id="panjang-jalan">
+                                <div class="mb-3">
+                                    <label for="jalan-nasional" class="form-label">Jalan Nasional</label>
+                                    <input type="text" class="form-control" id="jalan-nasional"
+                                        placeholder="Panjang Jalan Nasional">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="jalan-provinsi" class="form-label">Jalan Provinsi</label>
+                                    <input type="text" class="form-control" id="jalan-provinsi"
+                                        placeholder="Panjang Jalan Provinsi">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="jalan-kabupaten" class="form-label">Jalan Kabupaten</label>
+                                    <input type="text" class="form-control" id="jalan-kabupaten"
+                                        placeholder="Panjang Jalan Kabupaten">
+                                </div>
+                            </div>
+                            <button type="button" data-button="panjang-jalan"
+                                class="btn btn-primary d-block mx-auto w-50 mt-3">Update</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bg-white rounded p-4 shadow-sm">
+                            <h4 class="text-center mb-4">Rumah dan Jalan Poros Desa</h4>
+                            <div id="rumah-jalan-poros">
+                                <div class="mb-3">
+                                    <label for="rumah-tidak-layak-huni" class="form-label">Rumah Tidak Layak Huni
+                                        (RTLH)</label>
+                                    <input type="text" class="form-control" id="rumah-tidak-layak-huni"
+                                        placeholder="Jumlah Rumah Tidak Layak Huni">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="rumah-layak-huni" class="form-label">Rumah Layak Huni (RLH)</label>
+                                    <input type="text" class="form-control" id="rumah-layak-huni"
+                                        placeholder="Jumlah Rumah Layak Huni">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="jalan-poros-desa" class="form-label">Jalan Poros Desa (KM)</label>
+                                    <input type="text" class="form-control" id="jalan-poros-desa"
+                                        placeholder="Panjang Jalan Poros Desa">
+                                </div>
+                            </div>
+                            <button type="button" data-button="rumah-jalan-poros"
+                                class="btn btn-primary d-block mx-auto w-50 mt-3">Update</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bg-white rounded p-4 shadow-sm">
+                            <h4 class="text-center mb-4">Irigasi</h4>
+                            <div id="irigasi">
+                                <div class="mb-3">
+                                    <label for="daerah-aliran-sungai" class="form-label">Daerah Aliran Sungai
+                                        (DAS)</label>
+                                    <input type="text" class="form-control" id="daerah-aliran-sungai"
+                                        placeholder="Jumlah Daerah Aliran Sungai">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="waduk" class="form-label">Waduk</label>
+                                    <input type="text" class="form-control" id="waduk" placeholder="Jumlah Waduk">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="sarana-pengairan-primer" class="form-label">Sarana Pengairan
+                                        Primer (m)</label>
+                                    <input type="text" class="form-control" id="sarana-pengairan-primer"
+                                        placeholder="Panjang Sarana Pengairan Primer">
+                                </div>
+                            </div>
+                            <button type="button" data-button="irigasi"
+                                class="btn btn-primary d-block mx-auto w-50 mt-3">Update</button>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
             <!-- FOOTER -->
@@ -359,33 +460,6 @@
             <!-- END FOOTER -->
         </div>
     </div>
-    <script>
-        function formatRupiah(angka, prefix) {
-            var number_string = angka.replace(/[^,\d]/g, '').toString(),
-                split = number_string.split(','),
-                sisa = split[0].length % 3,
-                rupiah = split[0].substr(0, sisa),
-                ribuan = split[0].substr(sisa).match(/\d{3}/gi);
-
-            // tambahkan titik jika yang di input sudah menjadi angka ribuan
-            if (ribuan) {
-                separator = sisa ? '.' : '';
-                rupiah += separator + ribuan.join('.');
-            }
-
-            rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-            return prefix == undefined ? rupiah : (rupiah ? rupiah : '');
-        }
-
-        const inputAngka = document.getElementsByClassName('angka-input');
-
-        for (let i = 0; i < inputAngka.length; i++) {
-            inputAngka[i].addEventListener('keyup', function (e) {
-                inputAngka[i].value = formatRupiah(this.value)
-            })
-        }
-        // console.log(typeof inputAngka)
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -393,7 +467,7 @@
     <script src="../assets/js/app.min.js"></script>
     <script src="../assets/libs/apexcharts-bundle/dist/apexcharts.js"></script>
     <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
-    <script type="module" src="../assets/js/admin/dashboard.js"></script>
+    <script type="module" src="../assets/js/admin/tata-ruang.js"></script>
 </body>
 
 </html>

@@ -42,8 +42,8 @@
                             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                             <span class="hide-menu">Home</span>
                         </li>
-                        <li class="sidebar-item selected">
-                            <a class="sidebar-link active" href="/admin/index.html" aria-expanded="false">
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="/admin/index.html" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-layout-dashboard"></i>
                                 </span>
@@ -301,54 +301,157 @@
                 </div>
                 <!-- END JUDUL -->
 
-                <div class="row">
-                    <div class="col-md-6 bg-white rounded p-3">
-                        <h4 class="text-center mb-3">Dashboard Kuantitas</h4>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="jumlah-penduduk" class="form-label">Jumlah Penduduk</label>
-                                    <input type="text" class="form-control angka-input" id="jumlah-penduduk">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="bg-white rounded p-4 shadow-sm mb-4">
+                            <h4 class="text-center mb-4">Aparat Perlindungan Masyarakat</h4>
+                            <div class="row g-3" id="aparat-perlindungan-masyarakat">
+                                <div class="col-md-6">
+                                    <label for="linmas" class="form-label">Linmas</label>
+                                    <input type="text" class="form-control" id="linmas" placeholder="Jumlah LINMAS">
                                 </div>
-                                <div class="mb-3">
-                                    <label for="jumlah-kecamatan" class="form-label">Jumlah
-                                        Kecamatan</label>
-                                    <input type="text" class="form-control angka-input" id="jumlah-kecamatan">
+                                <div class="col-md-6">
+                                    <label for="satpol" class="form-label">Satpol PP</label>
+                                    <input type="text" class="form-control" id="satpol" placeholder="Jumlah Satpol PP">
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="jumlah-kelurahan" class="form-label">Jumlah Kelurahan</label>
-                                    <input type="text" class="form-control angka-input" id="jumlah-kelurahan">
+                                <div class="col-md-6">
+                                    <label for="polisi" class="form-label">Polisi</label>
+                                    <input type="text" class="form-control" id="polisi" placeholder="Jumlah Polisi">
                                 </div>
-                                <div class="mb-3">
-                                    <label for="jumlah-desa" class="form-label">Jumlah
-                                        Desa</label>
-                                    <input type="text" class="form-control angka-input" id="jumlah-desa">
+                                <div class="col-md-6">
+                                    <label for="tni" class="form-label">TNI</label>
+                                    <input type="text" class="form-control" id="tni" placeholder="Jumlah TNI">
                                 </div>
                             </div>
+                            <button type="button" data-button="aparat-perlindungan-masyarakat"
+                                class="btn btn-primary d-block mx-auto w-50 mt-3">Update</button>
                         </div>
-                        <button type="button" class="btn btn-primary float-end" data-button="jumlah">Update
-                            Data</button>
+                        <div class="bg-white rounded p-4 shadow-sm mb-4">
+                            <h4 class="text-center mb-4">K3</h4>
+                            <div class="row g-3" id="k3">
+                                <div class="col-md-6">
+                                    <label for="satpol-patroli" class="form-label">Petugas Satpol PP Patroli</label>
+                                    <input type="text" class="form-control" id="satpol-patroli"
+                                        placeholder="Jumlah Petugas Satpol PP Patroli">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="pelanggaran" class="form-label">Pelanggaran Kasus K3</label>
+                                    <input type="text" class="form-control" id="pelanggaran"
+                                        placeholder="Jumlah Pelanggaran Kasus K3">
+                                </div>
+                                <div class="col-12">
+                                    <label for="penjelasan" class="form-label">Penjelasan</label>
+                                    <textarea class="form-control" id="penjelasan" rows="2"></textarea>
+                                </div>
+                            </div>
+                            <button type="button" data-button="k3"
+                                class="btn btn-primary d-block mx-auto w-50 mt-3">Update</button>
+                        </div>
+                        <div class="bg-white rounded p-4 shadow-sm mb-4">
+                            <h4 class="text-center mb-4">Narkoba</h4>
+                            <div class="row g-3" id="narkoba">
+                                <div class="col-md-6">
+                                    <label for="penyuluhan" class="form-label">Penyuluhan Narkoba</label>
+                                    <input type="text" class="form-control" id="penyuluhan"
+                                        placeholder="Jumlah Penyuluhan Narkoba">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="razia-narkoba" class="form-label">Razia Narkoba</label>
+                                    <input type="text" class="form-control" id="razia-narkoba"
+                                        placeholder="Jumlah Razia Narkoba">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="kapa" class="form-label">KAPA</label>
+                                    <input type="text" class="form-control" id="kapa" placeholder="Jumlah KAPA">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="kama" class="form-label">KAMA</label>
+                                    <input type="text" class="form-control" id="kama" placeholder="Jumlah KAMA">
+                                </div>
+                                <div class="col-12">
+                                    <label for="deskripsi-narkoba" class="form-label">Deskripsi</label>
+                                    <textarea class="form-control" id="deskripsi-narkoba" rows="4"></textarea>
+                                </div>
+                            </div>
+                            <button type="button" data-button="narkoba"
+                                class="btn btn-primary d-block mx-auto w-50 mt-3">Update</button>
+                        </div>
                     </div>
-
-                    <div class="col-md-6 p-0 mt-3 mt-md-0 ps-md-3">
-                        <div class="bg-white rounded p-3">
-                            <h4 class="text-center">Indeks Pembangunan Manusia (IPM)</h4>
-                            <div class="d-flex justify-content-end my-3">
-                                <button type="button" class="btn btn-primary" id="button-add-input">
-                                    <i class="fa-solid fa-plus"></i> Tambah Data
-                                </button>
+                    <div class="col-md-6">
+                        <div class="mb-4">
+                            <img src="../assets/images/polisi-kumpul.png" class="mx-auto d-none d-md-block"
+                                style="width: 65%;" alt="">
+                        </div>
+                        <div class="bg-white rounded p-4 shadow-sm mb-4">
+                            <h4 class="text-center mb-4">Bencana Alam</h4>
+                            <div class="row g-3" id="bencana-alam">
+                                <div class="col-md-6">
+                                    <label for="banjir" class="form-label">Banjir</label>
+                                    <input type="text" class="form-control" id="banjir" placeholder="Jumlah Banjir">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="kebakaran" class="form-label">Kebakaran</label>
+                                    <input type="text" class="form-control" id="kebakaran"
+                                        placeholder="Jumlah Kebakaran">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="gempa" class="form-label">Gempa</label>
+                                    <input type="text" class="form-control" id="gempa" placeholder="Jumlah Gempa">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="tanah-longsor" class="form-label">Tanah Longsor</label>
+                                    <input type="text" class="form-control" id="tanah-longsor"
+                                        placeholder="Jumlah Tanah Longsor">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="angin-besar" class="form-label">Angin Besar</label>
+                                    <input type="text" class="form-control" id="angin-besar"
+                                        placeholder="Jumlah Angin Besar">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="tanah-bergerak-lainnya" class="form-label">Tanah Bergerak dan
+                                        Lainnya</label>
+                                    <input type="text" class="form-control" id="tanah-bergerak-lainnya"
+                                        placeholder="Jumlah Tanah Bergerak dan Lainnya">
+                                </div>
+                                <div class="col-12">
+                                    <label for="deskripsi-bencana" class="form-label">Deskripsi</label>
+                                    <textarea class="form-control" id="deskripsi-bencana" rows="4"></textarea>
+                                </div>
                             </div>
-                            <div id="form-ipm">
-                            </div>
-                            <div class="d-flex justify-content-center mt-4">
-                                <button type="button" class="btn btn-primary" data-button="ipm">Update Data</button>
+                            <button type="button" data-button="bencana-alam"
+                                class="btn btn-primary d-block mx-auto w-50 mt-3">Update</button>
+                        </div>
+                        <div class="bg-white rounded p-4 shadow-sm">
+                            <h4 class="text-center mb-3">Korban Bencana Alam</h4>
+                            <div class="row g-3" id="korban-bencana-alam">
+                                <div class="col-md-6">
+                                    <label for="meninggal" class="form-label">Meninggal</label>
+                                    <input type="text" class="form-control" id="meninggal"
+                                        placeholder="Jumlah Korban Meninggal">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="luka-luka" class="form-label">Luka-Luka</label>
+                                    <input type="text" class="form-control" id="luka-luka"
+                                        placeholder="Jumlah Korban Luka-Luka">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="hilang" class="form-label">Hilang</label>
+                                    <input type="text" class="form-control" id="hilang"
+                                        placeholder="Jumlah Korban Hilang">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="mengungsi" class="form-label">Mengungsi</label>
+                                    <input type="text" class="form-control" id="mengungsi"
+                                        placeholder="Jumlah Korban Mengungsi">
+                                </div>
+                                <button type="button" data-button="korban-bencana-alam"
+                                    class="btn btn-primary d-block mx-auto w-50 mt-3">Update</button>
                             </div>
                         </div>
+
                     </div>
                 </div>
-
             </div>
 
             <!-- FOOTER -->
@@ -359,33 +462,6 @@
             <!-- END FOOTER -->
         </div>
     </div>
-    <script>
-        function formatRupiah(angka, prefix) {
-            var number_string = angka.replace(/[^,\d]/g, '').toString(),
-                split = number_string.split(','),
-                sisa = split[0].length % 3,
-                rupiah = split[0].substr(0, sisa),
-                ribuan = split[0].substr(sisa).match(/\d{3}/gi);
-
-            // tambahkan titik jika yang di input sudah menjadi angka ribuan
-            if (ribuan) {
-                separator = sisa ? '.' : '';
-                rupiah += separator + ribuan.join('.');
-            }
-
-            rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-            return prefix == undefined ? rupiah : (rupiah ? rupiah : '');
-        }
-
-        const inputAngka = document.getElementsByClassName('angka-input');
-
-        for (let i = 0; i < inputAngka.length; i++) {
-            inputAngka[i].addEventListener('keyup', function (e) {
-                inputAngka[i].value = formatRupiah(this.value)
-            })
-        }
-        // console.log(typeof inputAngka)
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -393,7 +469,7 @@
     <script src="../assets/js/app.min.js"></script>
     <script src="../assets/libs/apexcharts-bundle/dist/apexcharts.js"></script>
     <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
-    <script type="module" src="../assets/js/admin/dashboard.js"></script>
+    <script type="module" src="../assets/js/admin/keamanan.js"></script>
 </body>
 
 </html>

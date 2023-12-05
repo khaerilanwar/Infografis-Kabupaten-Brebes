@@ -42,8 +42,8 @@
                             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                             <span class="hide-menu">Home</span>
                         </li>
-                        <li class="sidebar-item selected">
-                            <a class="sidebar-link active" href="/admin/index.html" aria-expanded="false">
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="/admin/index.html" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-layout-dashboard"></i>
                                 </span>
@@ -301,99 +301,257 @@
                 </div>
                 <!-- END JUDUL -->
 
-                <div class="row">
-                    <div class="col-md-6 bg-white rounded p-3">
-                        <h4 class="text-center mb-3">Dashboard Kuantitas</h4>
-                        <div class="row">
-                            <div class="col-md-6">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <div class="bg-white rounded p-4 shadow-sm mb-3">
+                            <img src="../assets/images/tangkap-polisi.png" class="w-50 d-none d-md-block mx-auto mb-3"
+                                alt="">
+                            <h4 class="text-dark text-center fw-semibold mb-4">Tindak Kriminal</h4>
+                            <div id="kriminal">
                                 <div class="mb-3">
-                                    <label for="jumlah-penduduk" class="form-label">Jumlah Penduduk</label>
-                                    <input type="text" class="form-control angka-input" id="jumlah-penduduk">
+                                    <label for="penjelasan-kriminal" class="form-label">Rangkuman</label>
+                                    <textarea class="form-control" id="penjelasan-kriminal" rows="4"
+                                        placeholder="Penjelasan Kasus Kriminal di Brebes"></textarea>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="jumlah-kecamatan" class="form-label">Jumlah
-                                        Kecamatan</label>
-                                    <input type="text" class="form-control angka-input" id="jumlah-kecamatan">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="jumlah-kelurahan" class="form-label">Jumlah Kelurahan</label>
-                                    <input type="text" class="form-control angka-input" id="jumlah-kelurahan">
+                                    <label for="jumlah-kasus-kriminal" class="form-label">Kasus Kriminal</label>
+                                    <input type="text" class="form-control" id="jumlah-kasus-kriminal"
+                                        placeholder="Jumlah Kasus Kriminal">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="jumlah-desa" class="form-label">Jumlah
-                                        Desa</label>
-                                    <input type="text" class="form-control angka-input" id="jumlah-desa">
+                                    <label for="deskripsi-kriminal" class="form-label">Deskripsi</label>
+                                    <textarea class="form-control" id="deskripsi-kriminal" rows="4"
+                                        placeholder="Deskripsi tentang tindak kriminal di Brebes"></textarea>
                                 </div>
                             </div>
+                            <button type="button" data-button="kriminal"
+                                class="btn btn-primary d-block mx-auto w-50 mt-3">Update</button>
                         </div>
-                        <button type="button" class="btn btn-primary float-end" data-button="jumlah">Update
-                            Data</button>
-                    </div>
 
-                    <div class="col-md-6 p-0 mt-3 mt-md-0 ps-md-3">
-                        <div class="bg-white rounded p-3">
-                            <h4 class="text-center">Indeks Pembangunan Manusia (IPM)</h4>
-                            <div class="d-flex justify-content-end my-3">
-                                <button type="button" class="btn btn-primary" id="button-add-input">
-                                    <i class="fa-solid fa-plus"></i> Tambah Data
-                                </button>
+
+
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bg-white rounded p-4 shadow-sm mb-3">
+                            <h4 class="text-dark text-center fw-semibold mb-4">Program Perlindungan Jaminan Sosial</h4>
+                            <div id="program-perlindungan-jaminan-sosial">
+                                <div class="mb-3">
+                                    <label for="jumlah-pkh" class="form-label">Program Keluarga
+                                        Harapan (PKH)</label>
+                                    <input type="text" class="form-control" id="jumlah-pkh"
+                                        placeholder="Jumlah Program Keluarga Harapan">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="jumlah-bpnt" class="form-label">Bantuan Pangan Non Tunai (BPNT)</label>
+                                    <input type="text" class="form-control" id="jumlah-bpnt"
+                                        placeholder="Jumlah Bantuan Pangan Non Tunai">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="jumlah-bpjs-pbi" class="form-label">Penerima Bantuan Iuran (BPJS
+                                        PBI)</label>
+                                    <input type="text" class="form-control" id="jumlah-bpjs-pbi"
+                                        placeholder="Jumlah Penerima Bantuan Iuran">
+                                </div>
                             </div>
-                            <div id="form-ipm">
+                            <button type="button" data-button="program-perlindungan-jaminan-sosial"
+                                class="btn btn-primary d-block mx-auto w-50 mt-3">Update</button>
+                        </div>
+
+                        <div class="bg-white rounded p-4 shadow-sm mb-4 mb-md-0">
+                            <div id="umum">
+                                <div class="mb-3">
+                                    <label for="penduduk-miskin" class="form-label">Penduduk Miskin</label>
+                                    <input type="text" class="form-control" id="penduduk-miskin"
+                                        placeholder="Jumlah Penduduk Miskin">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="penerima-bansos" class="form-label">Penerima Bansos</label>
+                                    <input type="text" class="form-control" id="penerima-bansos"
+                                        placeholder="Jumlah PMKS Penerima Bansos">
+                                </div>
                             </div>
-                            <div class="d-flex justify-content-center mt-4">
-                                <button type="button" class="btn btn-primary" data-button="ipm">Update Data</button>
+                            <button type="button" data-button="umum"
+                                class="btn btn-primary d-block mx-auto w-50 mt-3">Update</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bg-white rounded p-4 shadow-sm mb-4">
+                            <h4 class="text-dark text-center fw-semibold mb-4">Penduduk Rawan Sosial</h4>
+                            <div id="penduduk-rawan-sosial">
+                                <div class="mb-3">
+                                    <label for="lansia-terlantar" class="form-label">Lansia Terlantar</label>
+                                    <input type="text" class="form-control" id="lansia-terlantar"
+                                        placeholder="Jumlah Lansia Terlantar">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="gelandangan-pengemis" class="form-label">Gelandangan dan
+                                        Pengemis</label>
+                                    <input type="text" class="form-control" id="gelandangan-pengemis"
+                                        placeholder="Jumlah Gelandangan dan Pengemis">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="balita-anak-terlantar" class="form-label">Balita dan Anak
+                                        Terlantar</label>
+                                    <input type="text" class="form-control" id="balita-anak-terlantar"
+                                        placeholder="Jumlah Balita dan Anak Terlantar">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="penyandang-disabilitas" class="form-label">Penyandang
+                                        Disabilitas</label>
+                                    <input type="text" class="form-control" id="penyandang-disabilitas"
+                                        placeholder="Jumlah Penyandang Disabilitas">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="deskripsiPendudukRawanSosial" class="form-label">Deskripsi</label>
+                                    <textarea class="form-control" id="deskripsiPendudukRawanSosial" rows="6"
+                                        placeholder="Deskripsi tentang Penduduk Rawan Sosial"></textarea>
+                                </div>
                             </div>
+                            <button type="button" data-button="penduduk-rawan-sosial"
+                                class="btn btn-primary d-block mx-auto w-50 mt-3">Update</button>
                         </div>
                     </div>
                 </div>
 
-            </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="bg-white rounded p-4 shadow-sm mb-4">
+                            <h4 class="text-dark text-center fw-semibold mb-4">Agama Penduduk</h4>
+                            <div class="row g-3 justify-content-center" id="agama-penduduk">
+                                <div class="col-md-6">
+                                    <label for="islam" class="form-label">Islam</label>
+                                    <input type="text" class="form-control" id="islam"
+                                        placeholder="Jumlah Penduduk Islam">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="kristen" class="form-label">Kristen</label>
+                                    <input type="text" class="form-control" id="kristen"
+                                        placeholder="Jumlah Penduduk Kristen">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="katholik" class="form-label">Katholik</label>
+                                    <input type="text" class="form-control" id="katholik"
+                                        placeholder="Jumlah Penduduk Katholik">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="khonghuchu" class="form-label">Khonghuchu</label>
+                                    <input type="text" class="form-control" id="khonghuchu"
+                                        placeholder="Jumlah Penduduk Khonghuchu">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="hindu" class="form-label">Hindu</label>
+                                    <input type="text" class="form-control" id="hindu"
+                                        placeholder="Jumlah Penduduk Hindu">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="buddha" class="form-label">Buddha</label>
+                                    <input type="text" class="form-control" id="buddha"
+                                        placeholder="Jumlah Penduduk Buddha">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lainnya" class="form-label">Lainnya</label>
+                                    <input type="text" class="form-control" id="lainnya"
+                                        placeholder="Jumlah Penduduk Lainnya">
+                                </div>
+                            </div>
+                            <button type="button" data-button="agama-penduduk"
+                                class="btn btn-primary d-block mx-auto w-50 mt-3">Update</button>
+                        </div>
 
-            <!-- FOOTER -->
-            <div class="py-6 px-6 text-center">
-                <p class="mb-0 fs-4 text-black">Design and Developed by <a href="https://khaerilanwar.github.io/"
-                        target="_blank" class="pe-1 text-primary text-decoration-underline">Khaeril Anwar</a></p>
+                        <div class="bg-white rounded p-4 shadow-sm mb-4">
+                            <h4 class="text-dark text-center fw-semibold">PSKS</h4>
+                            <h4 class="text-dark text-center fw-semibold mb-4">Potensi dan Sumber Kesejahteraan</h4>
+                            <div class="row g-3 justify-content-center" id="psks">
+                                <div class="col-md-6">
+                                    <label for="karang-taruna" class="form-label">Karang Taruna</label>
+                                    <input type="text" class="form-control" id="karang-taruna"
+                                        placeholder="Jumlah Karang Taruna">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="tksm" class="form-label">TKSM</label>
+                                    <input type="text" class="form-control" id="tksm" placeholder="Jumlah TKSM">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="organisasi-sosial" class="form-label">Organisasi Sosial</label>
+                                    <input type="text" class="form-control" id="organisasi-sosial"
+                                        placeholder="Jumlah Organisasi Sosial">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="pordam" class="form-label">PORDAM</label>
+                                    <input type="text" class="form-control" id="pordam" placeholder="Jumlah PORDAM">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="tagana" class="form-label">TAGANA</label>
+                                    <input type="text" class="form-control" id="tagana" placeholder="Jumlah TAGANA">
+                                </div>
+                            </div>
+                            <button type="button" data-button="psks"
+                                class="btn btn-primary d-block mx-auto w-50 mt-3">Update</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="bg-white rounded p-4 shadow-sm mb-3">
+                            <h4 class="text-dark text-center fw-semibold mb-4">Pernikahan</h4>
+                            <div class="row g-3" id="pernikahan">
+                                <div class="col-md-4">
+                                    <label for="nikah" class="form-label">Nikah</label>
+                                    <input type="text" class="form-control" id="nikah" placeholder="Jumlah Nikah">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="talak" class="form-label">Talak</label>
+                                    <input type="text" class="form-control" id="talak" placeholder="Jumlah Talak">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="gugat" class="form-label">Gugat</label>
+                                    <input type="text" class="form-control" id="gugat" placeholder="Jumlah Gugat">
+                                </div>
+                            </div>
+                            <button type="button" data-button="pernikahan"
+                                class="btn btn-primary d-block mx-auto w-50 mt-3">Update</button>
+                        </div>
+                        <div class="bg-white rounded p-4 shadow-sm mb-4">
+                            <h4 class="text-dark text-center fw-semibold mb-4">Pidana Hukum</h4>
+                            <div class="row g-3 justify-content-center" id="pidana-hukum">
+                                <div class="col-md-6">
+                                    <label for="unjuk-rasa" class="form-label">Unjuk Rasa</label>
+                                    <input type="text" class="form-control" id="unjuk-rasa"
+                                        placeholder="Jumlah Unjuk Rasa">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="keputusan-pengadilan" class="form-label">Keputusan Pengadilan</label>
+                                    <input type="text" class="form-control" id="keputusan-pengadilan"
+                                        placeholder="Jumlah Keputusan Pengadilan">
+                                </div>
+                                <div class="col-8">
+                                    <label for="berkas-pidana-hukum" class="form-label">Berkas Pidana Hukum di
+                                        Kejaksaan</label>
+                                    <input type="text" class="form-control" id="berkas-pidana-hukum"
+                                        placeholder="Jumlah Berkas Pidana Hukum di Kejaksaan">
+                                </div>
+                            </div>
+                            <button type="button" data-button="pidana-hukum"
+                                class="btn btn-primary d-block mx-auto w-50 mt-3">Update</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FOOTER -->
+                <div class="py-6 px-6 text-center">
+                    <p class="mb-0 fs-4 text-black">Design and Developed by <a href="https://khaerilanwar.github.io/"
+                            target="_blank" class="pe-1 text-primary text-decoration-underline">Khaeril Anwar</a></p>
+                </div>
+                <!-- END FOOTER -->
             </div>
-            <!-- END FOOTER -->
         </div>
-    </div>
-    <script>
-        function formatRupiah(angka, prefix) {
-            var number_string = angka.replace(/[^,\d]/g, '').toString(),
-                split = number_string.split(','),
-                sisa = split[0].length % 3,
-                rupiah = split[0].substr(0, sisa),
-                ribuan = split[0].substr(sisa).match(/\d{3}/gi);
-
-            // tambahkan titik jika yang di input sudah menjadi angka ribuan
-            if (ribuan) {
-                separator = sisa ? '.' : '';
-                rupiah += separator + ribuan.join('.');
-            }
-
-            rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-            return prefix == undefined ? rupiah : (rupiah ? rupiah : '');
-        }
-
-        const inputAngka = document.getElementsByClassName('angka-input');
-
-        for (let i = 0; i < inputAngka.length; i++) {
-            inputAngka[i].addEventListener('keyup', function (e) {
-                inputAngka[i].value = formatRupiah(this.value)
-            })
-        }
-        // console.log(typeof inputAngka)
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
-    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/sidebarmenu.js"></script>
-    <script src="../assets/js/app.min.js"></script>
-    <script src="../assets/libs/apexcharts-bundle/dist/apexcharts.js"></script>
-    <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
-    <script type="module" src="../assets/js/admin/dashboard.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+        <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/js/sidebarmenu.js"></script>
+        <script src="../assets/js/app.min.js"></script>
+        <script src="../assets/libs/apexcharts-bundle/dist/apexcharts.js"></script>
+        <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+        <script type="module" src="../assets/js/admin/sosial.js"></script>
 </body>
 
 </html>

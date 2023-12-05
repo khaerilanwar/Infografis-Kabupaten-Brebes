@@ -13,6 +13,16 @@
   border-color: #0C356A;
 }
 
+.w-fit {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .w-fit {
+    width: fit-content;
+  }
+}
+
 /* @media (min-width: 768px) {
   .mobile-jumlah {
     border: none;

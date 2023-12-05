@@ -95,6 +95,11 @@ export function camelCase(text) {
     });
 }
 
+// Mengkonversi camelcase ke id html
+export function idHtml(text) {
+    return text.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+}
+
 // Fungsi untuk memberikan feedback
 export function feedbackData(icon, message) {
     const Toast = Swal.mixin({
